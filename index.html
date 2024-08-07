@@ -9,14 +9,19 @@
 <body>
   <div class="content">
     <div class="text">
-     Halopesa 
+      Halopesa 
     </div>
   
     <div class="CO-details">
-      <p class="details"> Take a screenshot then scan the Qr code in halopesa mobile app  to pay or just simply copy our halopesa number and pay via ussd menu </p>
+      <p class="details">Take a screenshot then scan the QR code in the Halopesa mobile app to pay or just simply copy our Halopesa number and pay via USSD menu.</p>
     </div>  
     
     <form id="manual-payment-form" action="/send-email" method="POST">
+      <div class="field">
+        <input type="email" id="email" name="email" required>
+        <span class="fas fa-envelope"></span>
+        <label>Email</label>
+      </div>
       <div class="field">
         <input type="text" id="username" name="username" required>
         <span class="fas fa-user"></span>
@@ -47,4 +52,4 @@
     </form>
   </div>
 </body>
-</html>
+          </html>
