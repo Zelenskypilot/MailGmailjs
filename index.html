@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Mobile Payment | SMM Service</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+  <div class="content">
+    <div class="text">
+     Halopesa 
+    </div>
+  
+    <div class="CO-details">
+      <p class="details"> Take a screenshot then scan the Qr code in halopesa mobile app  to pay or just simply copy our halopesa number and pay via ussd menu </p>
+    </div>  
+    
+    <form id="manual-payment-form" action="/send-email" method="POST">
+      <div class="field">
+        <input type="text" id="username" name="username" required>
+        <span class="fas fa-user"></span>
+        <label>Username</label>
+      </div>
+      <div class="field">
+        <input type="text" id="phone-number" name="phone-number" required>
+        <span class="fas fa-phone"></span>
+        <label>Phone Number</label>
+      </div>
+      <div class="field">
+        <input type="number" id="amount" name="amount" required>
+        <span class="fas fa-money-bill-wave"></span>
+        <label>Payment Amount</label>
+      </div>
+      <div class="field">
+        <input type="text" id="reference" name="reference" required>
+        <span class="fas fa-receipt"></span>
+        <label>Reference Number</label>
+      </div>
+      <div class="field">
+        <input type="date" id="date" name="date" required>
+        <span class="fas fa-calendar-alt"></span>
+        <label>Payment Date</label>
+      </div>
+      <button type="submit">Submit Payment</button>
+      <div id="message"></div>
+    </form>
+  </div>
+</body>
+          </html>
