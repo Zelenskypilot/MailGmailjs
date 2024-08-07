@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Confirmation</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+      background-color: #f05525;
+      padding: 10px 0;
+      text-align: center;
+      color: #fff;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+    .content {
+      margin: 20px 0;
+    }
+    .footer {
+      text-align: center;
+      color: #777;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Payment Confirmation</h1>
+    </div>
+    <div class="content">
+      <p>Dear {{username}},</p>
+      <p>Thank you for your payment. Here are the details of your transaction:</p>
+      <p><strong>Phone Number:</strong> {{phoneNumber}}</p>
+      <p><strong>Amount:</strong> {{amount}}</p>
+      <p><strong>Reference Number:</strong> {{reference}}</p>
+      <p><strong>Payment Date:</strong> {{date}}</p>
+      <p>We appreciate your business!</p>
+    </div>
+    <div class="footer">
+      <p>© 2024 SMM Service. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html>
