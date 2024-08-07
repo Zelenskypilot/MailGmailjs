@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Payment Confirmation</title>
+  <title>Payment Verification</title>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -40,16 +40,15 @@
 <body>
   <div class="container">
     <div class="header">
-      <h1>Payment Confirmation</h1>
+      <h1>Payment Verification Needed</h1>
     </div>
     <div class="content">
-      <p>Dear {{username}},</p>
-      <p>Thank you for your payment. Here are the details of your transaction:</p>
+      <p>A new payment request has been received. Please verify the details below:</p>
+      <p><strong>Username:</strong> {{username}}</p>
       <p><strong>Phone Number:</strong> {{phoneNumber}}</p>
       <p><strong>Amount:</strong> {{amount}}</p>
       <p><strong>Reference Number:</strong> {{reference}}</p>
       <p><strong>Payment Date:</strong> {{date}}</p>
-      <p>We appreciate your business!</p>
     </div>
     <div class="footer">
       <p>© 2024 SMM Service. All rights reserved.</p>
