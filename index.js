@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 
 // Handle form submissions
 app.post('/send-email', async (req, res) => {
-    const { username, phoneNumber, amount, reference, date } = req.body;
+    const { username, 'phone-number': phoneNumber, amount, reference, date, email } = req.body;
 
     // Read the email template
     fs.readFile(path.join(__dirname, 'emailTemplate.html'), 'utf8', async (err, data) => {
@@ -40,16 +40,16 @@ app.post('/send-email', async (req, res) => {
         let transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: 'syprasj@gmail.com',
-                pass: 'irqd ausm vhan puow'
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASS
             }
         });
 
         // Email options
         let mailOptions = {
-            from: 'syprasj@gmail.com',
-            to: 'recipient@example.com', // Change to the recipient's email address
-            subject: 'Payment Confirmation',
+            from: email, // User's email address
+            to: 'syprasj@gmail.com', // Your company email address
+            subject: 'Payment Verification Needed',
             html: emailContent
         };
 
