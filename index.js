@@ -7,13 +7,15 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Middleware
+// Middleware to parse URL-encoded bodies
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static('public'));
+
+// Serve static files
+app.use(express.static(path.join(__dirname)));
 
 // Serve the HTML form
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Handle form submissions
@@ -21,7 +23,7 @@ app.post('/send-email', async (req, res) => {
     const { username, phoneNumber, amount, reference, date } = req.body;
 
     // Read the email template
-    fs.readFile(path.join(__dirname, 'templates', 'emailTemplate.html'), 'utf8', async (err, data) => {
+    fs.readFile(path.join(__dirname, 'emailTemplate.html'), 'utf8', async (err, data) => {
         if (err) {
             return res.status(500).send('Error reading email template.');
         }
